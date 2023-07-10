@@ -10,14 +10,12 @@ import {classNames} from '@/utils/helpers';
 
 const navs = [
   {name: 'Movies', href: '/'},
-  {name: 'Now Showing', href: '/shows'},
   {name: 'Promotions', href: '/promotions'},
   {name: 'Contact Us', href: '/contact'},
 ];
 
 export function Header() {
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({open}) => (

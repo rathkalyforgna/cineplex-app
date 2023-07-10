@@ -3,6 +3,7 @@ import type {Metadata} from 'next';
 import {Montserrat} from 'next/font/google';
 import {Header} from '@/components/Header';
 import {Footer} from '@/components/Footer';
+import {Providers} from '@/utils/providers';
 
 const montserrat = Montserrat({
   weight: ['300', '400', '500', '600', '700'],
@@ -20,9 +21,11 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <Providers>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
